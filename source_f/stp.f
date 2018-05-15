@@ -24,7 +24,7 @@ c   see  H. Kantz, T. Schreiber, Nonlinear Time Series Analysis, Cambridge
 c      University Press (1997,2004)
 c   author T. Schreiber (1998) based on earlier version
 c==========================================================================
-      parameter(nx=1000000,mdt=500,mfrac=100)
+      parameter(nx=1000000,mdt=600,mfrac=100)
       dimension x(nx), stp(mfrac,mdt)
       character*72 file, fout
       data idt/1/, perc/0.05/, ndt/100/
@@ -65,7 +65,7 @@ c usage message
       call popt("d","delay")
       call popt("m","embedding dimension")
       call popt("#","time resolution (1)")
-      call popt("t","time steps (100, <500)")
+      call popt("t","time steps (100, <600)")
       call popt("%","fraction at wich to create levels (0.05, >0.01)")
       call popt("l","number of values to be read (all)")
       call popt("x","number of values to be skipped (0)")
@@ -76,7 +76,7 @@ c usage message
       end
 
       subroutine stplot(nmax,y,id,m,epsmax,stp,nfrac,mdt,idt)
-      parameter(meps=1000,mfrac=100)
+      parameter(meps=1200,mfrac=100)
       dimension y(nmax),stp(mfrac,mdt),ihist(meps)
 
       do 10 it=1,mdt
